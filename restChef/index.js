@@ -34,6 +34,12 @@ const restChef = (port, cb) => {
         req.method = req.method.toLowerCase();
         const decoder = new StringDecoder('utf-8');
         let body = ''
+
+        res.sendData=(obj)=>{
+            res.statusCode=obj.status;
+            res.end(JSON.stringify(obj.data))
+        }
+
         req.on('data', buffer => {
             body += decoder.write(buffer)
         })

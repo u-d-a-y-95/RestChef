@@ -7,7 +7,10 @@ const app = restChef(6000,()=>{
 
 
 app.get('/sample',(req,res)=>{
-  res.end("Second  Route : /")
+  res.sendData({
+    status:201,
+    data:[{name:"uday",age:25}]
+  })
 })
 
 app.get('/',(req,res)=>{
