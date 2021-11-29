@@ -13,6 +13,14 @@ app.get('/sample',(req,res)=>{
   })
 })
 
+app.post('/sample',(req,res)=>{
+  res.sendData({
+    status:201,
+    data:[{name:"jui",age:25}]
+  })
+})
+
+
 app.get('/',(req,res)=>{
   res.end("First Route : /")
 })

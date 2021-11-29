@@ -45,7 +45,7 @@ const restChef = (port, cb) => {
         })
         req.on('end', () => {
             body += decoder.end()
-            req.body = JSON.parse(body)
+            req.body = body ? JSON.parse(body) : {}
 
             // find route 
 
